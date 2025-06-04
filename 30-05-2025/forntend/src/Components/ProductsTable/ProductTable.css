@@ -1,0 +1,74 @@
+.product-table-container{
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  max-width: 1000px;
+  margin: 2rem auto;
+}
+.product-table {
+ 
+    font-family: 'Courier New', Courier, monospace;
+    transform: translatey(-50%,-50%);
+}
+
+.product-table th, .product-table td {
+  padding: 0.75rem 1rem;
+  text-align: center;
+}
+
+
+.product-table th {
+  background: #9ec0f8;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+
+}
+.product-table td {
+    cursor: pointer;
+}
+
+.product-table td{
+    border-radius: 12px;
+     letter-spacing: 0.3px;
+}
+
+.product-table td:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+/* .product-table td {
+  background-color: white;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+
+} */
+
+.product-table tr:hover {
+  background: #c1d5e6;
+  transition: background 0.2s;
+}
+
+.table-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px ;
+    border:  2px solid #e0e0e0;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    transition: tranform 0.2s;
+}
+
+.no-data {
+  color: white;
+  font-size: 1.1rem;
+  padding: 2rem 0;
+  text-align: center;
+  /* background: #fffbe6; */
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}

@@ -3,7 +3,7 @@ import axios from "axios";
 import type { CartsItem, ProductData } from "../../../TypeScript/constrain";
 import type { AppDispatch } from "../../store";
 
-const api: string = "http://localhost:8080";
+const api: string = "https://product-api-cro4.onrender.com";
 
 // const dispatch= useDispatch()
 

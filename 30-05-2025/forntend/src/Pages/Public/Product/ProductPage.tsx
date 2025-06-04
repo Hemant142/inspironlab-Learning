@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./ProductPage.css";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -8,9 +8,11 @@ import Sidebar from "../../../Components/Sidebar/Sidebar";
 import { useSearchParams } from "react-router-dom";
 import { fetchProducts } from "../../../Store/features/Product/productThunks";
 import type { AppDispatch } from "../../../Store/store";
+import ProductTable from "../../../Components/ProductsTable/ProductTable";
 
 export default function ProductPage() {
   const dispatch = useDispatch<AppDispatch>();
+  const [isChecked, setIsChecked] = useState(false);
 
   const productData = useSelector(
     (state: { products: { products: Array<ProductData> } }) =>
@@ -52,21 +54,35 @@ export default function ProductPage() {
       (a: { price: number }, b: { price: number }) => b.price - a.price
     );
 
+  const handleChange = () => {
+    setIsChecked(!isChecked);
+  };
+
   return (
     <div className="product-page-root">
       <Sidebar />
 
       <div className="product-page-container">
         <h2>All Products</h2>
-        <div className="product-list">
-          {filteredProducts && filteredProducts.length > 0 ? (
-            filteredProducts.map((product: ProductData) => (
-              <ProductCard key={product._id} product={product} />
-            ))
-          ) : (
-            <p>No products found.</p>
-          )}
-        </div>
+        <label className="switch">
+          <input type="checkbox" checked={isChecked} onChange={handleChange} />
+          <span className="slider"></span>
+        </label>
+        {!isChecked ? (
+          <div className="product-list">
+            {filteredProducts && filteredProducts.length > 0 ? (
+              filteredProducts.map((product: ProductData) => (
+                <ProductCard key={product._id} product={product} />
+              ))
+            ) : (
+              <p>No products found.</p>
+            )}
+          </div>
+        ) : (
+          <div>
+            <ProductTable products={filteredProducts} />
+          </div>
+        )}
       </div>
     </div>
   );
