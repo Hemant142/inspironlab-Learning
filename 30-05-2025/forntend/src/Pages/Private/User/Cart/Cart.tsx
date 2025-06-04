@@ -16,7 +16,6 @@ export default function Cart() {
   );
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
- 
 
   const cart = useSelector(
     (state: { products: { carts: CartsItem[] } }) => state.products.carts
@@ -30,11 +29,11 @@ export default function Cart() {
       setLoading(false);
     };
     fetchCart();
-  }, [token,dispatch]);
+  }, [token, dispatch]);
 
-  const handleDelete = async(id: string) => {
-   await dispatch(deleteCarts({ token, id }));
-  //  await  dispatch(getCarts({ token }));
+  const handleDelete = async (id: string) => {
+    await dispatch(deleteCarts({ token, id }));
+    //  await  dispatch(getCarts({ token }));
   };
 
   const total = cart.reduce(
@@ -55,7 +54,9 @@ export default function Cart() {
         quantity: item.quantity,
       }));
 
-      const resultAction = await dispatch(myOrderPlaced({ token, productsForOrder }));
+      const resultAction = await dispatch(
+        myOrderPlaced({ token, productsForOrder })
+      );
 
       if (myOrderPlaced.fulfilled.match(resultAction)) {
         alert(resultAction.payload.message || "Order placed successfully!");
@@ -87,7 +88,7 @@ export default function Cart() {
             />
             <div className="cart-item-info">
               <div>
-                <b>{item.product.name}</b>
+                <b>{item.product.about}</b>
               </div>
               <div>Brand: {item.product.brand}</div>
               <div>Category: {item.product.category}</div>
