@@ -1,0 +1,37 @@
+.order-main-container{
+padding: 2rem;
+}
+.order-container{
+  
+    margin-bottom: 2rem;
+    /* border: 2px solid red; */
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    width: 90%; 
+    border-radius: 16px;
+    margin: auto;
+    
+   /* margin-top: 2rem; */
+}
+
+.order-container-head{
+    /* background-color: #ccc; */
+    padding-left: 1rem;
+      font-family: 'Courier New', Courier, monospace;
+      box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    display: flex;
+    gap: 1.5rem;
+    border-radius: 16px 16px 0px 0px;
+
+  
+}
+.order-container-head span {
+  font-size: medium;
+    font-weight: 700;
+    display: flex;
+    flex-direction:column ;
+}
+
+.order-container-body{
+    /* border: 1px solid black; */
+    background-color: white
+}

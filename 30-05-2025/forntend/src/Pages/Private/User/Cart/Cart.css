@@ -1,0 +1,88 @@
+.cart-root {
+  display: flex;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 2rem auto;
+}
+
+.cart-items {
+  flex: 2;
+  background: #fff;
+  border-radius: 10px;
+  padding: 24px;
+  box-shadow: 0 2px 8px #eee;
+  
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 6px;
+  padding: 0.7rem;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.cart-item-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cart-item-info {
+  flex: 1;
+}
+
+.cart-bill {
+  flex: 1;
+  background: #f8f8f8;
+  border-radius: 10px;
+  padding: 24px;
+  box-shadow: 0 2px 8px #eee;
+  height: fit-content;
+}
+
+.cart-bill-list {
+  font-size: 1.1rem;
+  margin: 1rem 0;
+}
+
+.cart-bill-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.cart-bill-total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.cart-place-order-btn {
+  width: 100%;
+  padding: 0.8rem;
+  background: #005bea;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.2s;
+}
+
+.cart-place-order-btn:hover {
+  background: #003e8a;
+}
+
+.cart-loading,
+.cart-empty {
+  padding: 40px;
+  text-align: center;
+  font-size: 1.2rem;
+}

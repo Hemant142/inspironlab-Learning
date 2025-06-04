@@ -1,0 +1,64 @@
+#root {
+  /* max-width: 1280px; */
+  margin:  auto;
+  /* padding: 2rem; */
+  text-align: center;
+}
+
+/* <=================================Button==========================> */
+
+button{
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: white; 
+  max-height:min-content;
+  padding: 0.6em 1.2em; 
+  font-size: 1em;
+  font-weight: 450;
+  cursor: pointer;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: #9ec0f8;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+
+}
+
+button:hover{
+  border-color: #7caee1;
+  background-color: #669ffa;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+/* <=====================================</Button>======================> */
+
+
+h2, h3,h4,p{
+  font-size: 1.2em;
+  line-height: 1.1;
+    font-family:'Courier New', Courier, monospace
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+
