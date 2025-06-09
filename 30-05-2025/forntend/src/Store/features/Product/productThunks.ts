@@ -3,12 +3,12 @@ import axios from "axios";
 import type { CartsItem, ProductData } from "../../../TypeScript/constrain";
 import type { AppDispatch } from "../../store";
 
-const api: string = "https://product-api-cro4.onrender.com";
-
+// const api: string = "https://product-api-cro4.onrender.com";
+const api:string="http://localhost:8080"
 // const dispatch= useDispatch()
 
-export const fetchProducts = createAsyncThunk("products/get", async () => {
-  const response = await axios.get(`${api}/products`);
+export const fetchProducts = createAsyncThunk("products/get", async ({page=1,limit=10}:{page:number,limit:number}) => {
+  const response = await axios.get(`${api}/products?page=${page}&limit=${limit}`);
   return response.data;
 });
 

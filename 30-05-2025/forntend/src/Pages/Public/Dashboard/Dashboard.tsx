@@ -13,7 +13,7 @@ export default function Dashboard() {
     (state: { products: { productLength: number } }) =>
       state.products?.productLength ?? 0
   );
-  console.log(productLength, "productLength");
+
   const orderedProducts = useSelector(
     (state: RootState) => state.products?.orderedProducts ?? []
   );
@@ -25,7 +25,7 @@ export default function Dashboard() {
 
   console.log(token, "token");
   useEffect(() => {
-    dispatch(fetchProducts());
+    dispatch(fetchProducts({ page: 1, limit: 10 }));
   }, [dispatch]);
 
   useEffect(() => {

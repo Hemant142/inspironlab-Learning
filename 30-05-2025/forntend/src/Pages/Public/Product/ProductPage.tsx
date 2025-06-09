@@ -13,21 +13,51 @@ import ProductTable from "../../../Components/ProductsTable/ProductTable";
 export default function ProductPage() {
   const dispatch = useDispatch<AppDispatch>();
   const [isChecked, setIsChecked] = useState(false);
+  const [page, setPage] = useState(1);
+  const [hasMore, setHasMore] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const productData = useSelector(
     (state: { products: { products: Array<ProductData> } }) =>
       state.products.products
   );
 
+  console.log(productData, "productData");
   const [searchParams] = useSearchParams();
   const category = searchParams.getAll("category");
   const brand = searchParams.getAll("brand");
   const order = searchParams.get("order") || "";
   const q = searchParams.get("q") || "";
+  console.log(page, "page");
+  useEffect(() => {
+    setLoading(true);
+    // Check if there are more products to load
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    dispatch(fetchProducts({ page, limit: 10 })).then((action: any) => {
+      setLoading(false);
+      if (action.payload && action.payload.products.length < 10) {
+        setHasMore(false);
+      } else {
+        setHasMore(true);
+      }
+    });
+  }, [dispatch, page]);
+  // Infinite scroll handler
 
   useEffect(() => {
-    dispatch(fetchProducts());
-  }, [dispatch]);
+    const handleScroll = () => {
+      if (
+        window.innerHeight + document.documentElement.scrollTop + 100 >=
+          document.documentElement.offsetHeight &&
+        hasMore &&
+        !loading
+      ) {
+        setPage((prev) => prev + 1);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [hasMore, loading]);
 
   const filteredProducts = productData
     .filter((p: ProductData) => {
@@ -77,6 +107,8 @@ export default function ProductPage() {
             ) : (
               <p>No products found.</p>
             )}
+            {loading && <p>Loading more products...</p>}
+            {!hasMore && <p>No more products to load.</p>}
           </div>
         ) : (
           <div>

@@ -1,7 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const api: string = "https://product-api-cro4.onrender.com";
+// const api: string = "https://product-api-cro4.onrender.com";
+const api:string="http://localhost:8080"
 export const loginUser = createAsyncThunk(
   "auth/loginUser",
   async (form: { email: string; password: string }) => {
