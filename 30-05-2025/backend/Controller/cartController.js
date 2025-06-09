@@ -4,10 +4,10 @@ export const cartAdded = async (req, res) => {
   try {
     const userId = req.user._id;
     const { product, quantity } = req.body;
-    console.log(product, quantity,userId);
+    console.log(product, quantity, userId);
     let prevCart = await Cart.findOne({ product: product, user: userId });
     console.log(prevCart, "first Prev");
-    if (prevCart!=null) {
+    if (prevCart != null) {
       prevCart.quantity += quantity;
     } else {
       prevCart = new Cart({
@@ -17,7 +17,7 @@ export const cartAdded = async (req, res) => {
         cartDate: new Date(),
       });
     }
- console.log(prevCart,"Prev SEcond")
+    console.log(prevCart, "Prev SEcond");
     await prevCart.save();
     return res
       .status(201)
@@ -32,7 +32,9 @@ export const cartAdded = async (req, res) => {
 export const getMyCarts = async (req, res) => {
   try {
     const userId = req.user._id;
-    const carts = await Cart.find({ user: userId }).populate("product").select("-user");
+    const carts = await Cart.find({ user: userId })
+      .populate("product")
+      .select("-user");
 
     return res.status(200).send({ message: "get Carts Successfully", carts });
   } catch (error) {
@@ -70,7 +72,10 @@ export const deleteCarts = async (req, res) => {
   try {
     const userId = req.user._id;
     const { id } = req.params;
-    const deleteCart = await Cart.findOneAndDelete({ product: id, user: userId });
+    const deleteCart = await Cart.findOneAndDelete({
+      product: id,
+      user: userId,
+    });
     if (!deleteCart) {
       return res
         .status(404)
