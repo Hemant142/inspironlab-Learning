@@ -1,0 +1,11 @@
+<form (ngSubmit)="onAddTodo()">
+  <input placeholder="Add Task" [(ngModel)]="task" name="task" />
+  <button type="submit">Add Task</button>
+</form>
+
+<div *ngFor="let todo of todos">
+  <h4>Task: {{ todo.title }}</h4>
+  <p>Completed:{{ todo.completed ? "Yes" : "No" }}</p>
+  <button (click)="onToggleTodo(todo)">Update Status</button>
+  <button (click)="onDeleteTodo(todo.id)">Delete</button>
+</div>

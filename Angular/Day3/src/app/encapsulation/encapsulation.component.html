@@ -1,0 +1,101 @@
+<div>
+  <h1>Encapsulation in Angular</h1>
+  <p>
+    This component demonstrates the use of encapsulation in Angular.
+    Encapsulation is a way to control the visibility and accessibility of
+    component styles and templates. In this example, we use the
+    <code>ViewEncapsulation</code> enum to set the encapsulation mode for the
+    component.
+  </p>
+  <p>The encapsulation mode can be set to:</p>
+
+  <ul>
+    <li><code>ViewEncapsulation.Emulated</code> (default)</li>
+    <li><code>ViewEncapsulation.None</code></li>
+    <li><code>ViewEncapsulation.ShadowDom</code></li>
+    <li><code>ViewEncapsulation.Native</code></li>
+  </ul>
+
+  <p>
+    In this example, we use <code>ViewEncapsulation.Emulated</code>, which means
+    that Angular will emulate the behavior of Shadow DOM by adding unique
+    attributes to the component's styles. This allows styles to be scoped to the
+    component without using actual Shadow DOM.
+  </p>
+  <p>
+    You can see the effect of encapsulation by inspecting the styles applied to
+    this component in the browser's developer tools. The styles will be scoped
+    to this component only, preventing them from affecting other components in
+    the application.
+  </p>
+  <div style="border: 2px solid red; margin-top: 2rem">
+    <p>
+      Example :---<span style="font-weight: bold"
+        >Encapsulation:ViewEncapsulation.Emulated</span
+      >
+    </p>
+    <ul>
+      <li>
+        In this inside the Child component we are doing
+        Encapsulation:ViewEncapsulation.Emulated (encapsulation.component.ts)
+        because of that the parent component (app-encapsulation-emulated) not
+        getting red
+      </li>
+      <li>
+        In this example, we are using Emulated encapsulation, which means that
+        the styles defined in the child component will not affect the parent
+        component or other components.
+      </li>
+    </ul>
+
+    <app-encapsulation-emulated></app-encapsulation-emulated>
+    <h3>Encapsulation Child Component</h3>
+  </div>
+
+  <div style="border: 2px solid green; margin-top: 2rem">
+    <p>
+      Example :---<span style="font-weight: bold"
+        >Encapsulation:ViewEncapsulation.ShadowDom</span
+      >
+    </p>
+    <ul>
+      <li>
+        In this inside the Child component we are doing
+        Encapsulation:ViewEncapsulation.ShadowDom (encapsulation.component.ts)
+        because of that the parent component (app-encapsulation-shadow-dom) not
+        getting green
+      </li>
+      <li>
+        In this example, we are using Shadow DOM encapsulation, which means that
+        the styles defined in the child component will not affect the parent
+        component or other components.
+      </li>
+    </ul>
+
+    <h3>Encapsulation Child Component ShadowDom</h3>
+    <app-encapsulation-shadow-dom></app-encapsulation-shadow-dom>
+  </div>
+
+  <div style="border: 2px solid orange; margin-top: 2rem">
+    <p>
+      Example :---<span style="font-weight: bold"
+        >Encapsulation:ViewEncapsulation.None</span
+      >
+    </p>
+    <ul>
+      <li>
+        In this inside the Child component we are doing
+        Encapsulation:ViewEncapsulation.None (encapsulation.component.ts)
+        because of that the parent component (app-encapsulation-none) also
+        getting orange
+      </li>
+      <li>
+        In this example, we are using None encapsulation, which means that the
+        styles defined in the child component will affect the parent component
+        and other components.
+      </li>
+    </ul>
+    <h4>Encapsulation Child Component</h4>
+    <app-encapsulation-none></app-encapsulation-none>
+  </div>
+</div>

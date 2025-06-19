@@ -18,7 +18,7 @@ export default function ProductPage() {
   const [loading, setLoading] = useState(false);
 
   const productData = useSelector(
-    (state: { products: { products: Array<ProductData> } }) =>
+    (state: { products: { products: ProductData[] } }) =>
       state.products.products
   );
 

@@ -1,0 +1,49 @@
+<div style="width: 100%; border: 2px solid green">
+  <h1>Items are here</h1>
+  <button (click)="showItems = true">Show Items</button>
+  <button (click)="showItems = false">Hide Items</button>
+  <div
+    style="
+      display: grid;
+      margin-top: 2rem;
+      border: 2px solid blue;
+        justify-items: center;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    "
+  >
+    @for (item of items; track i; let i=$index) {
+    <!-- @defer (on viewport){
+
+            <app-item [id]="i+1"/>
+            <br/>
+        } -->
+
+    <!-- @defer (on hover){
+
+            <app-item [id]="i+1"/>
+            <br/>
+        } -->
+
+    @if (!showItems) { @defer (when showItems){
+    <app-item [id]="i + 1" />
+    } @placeholder {
+    <div class="placeholder"></div>
+    }@loading {
+    <div class="placeholder">Loading...</div>
+    }@error {
+    <div class="error"></div>
+    } }@else{ @defer (when showItems){
+    <app-item [id]="i + 1" />
+
+    } @placeholder {
+    <div class="placeholder"></div>
+    }@loading {
+    <div class="placeholder">Loading...</div>
+    }@error {
+    <div class="error">OFFLINE</div>
+    } } 
+
+}
+  </div>
+</div>

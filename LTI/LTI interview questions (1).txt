@@ -1,0 +1,43 @@
+What is Hoisting?
+What are Closures, and where have you used them in a project?
+What is the difference between var, let, and const?
+Explain Promises.
+Define Virtual DOM.
+How JS handles async functions.
+Why do we use React over other frameworks?
+What is Babel?
+Define Prop Drilling, how to optimize this.
+Explain the lifecycle for class component and functional component.
+What is useEffect?
+Describe useMemo and useCallback.
+What is Reconciliation?
+What is Node.js?
+Explain the spread and rest operators.
+How would you copy the content of a <div> element?
+How do you handle routes in Next.js?
+What is Redux Toolkit?
+Explain Version Control.
+Have you used any VS Code tools for linting?
+Explain HTTP status codes.
+What is the difference between PUT and PATCH?
+What are package.json and package-lock.json in a React app?
+What is Webpack?
+What are the disadvantages of Material-UI?
+What is SSO?
+Provide a JavaScript code snippet.
+what is git and github?
+what is codespitting?
+
+var num = 10
+function test() {
+    if(num > 20) {
+        var num = 50
+    }
+    console.log(num)
+}
+ 
+test()
+this is code snippit asked in the interview
+
+
+

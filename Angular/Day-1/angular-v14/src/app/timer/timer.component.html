@@ -1,0 +1,16 @@
+<div
+  style="
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    align-items: center;
+  "
+>
+  <h1>Timer works</h1>
+  <h3>Time: {{ time }}</h3>
+  <div>
+    <button (click)="startTimer()">Start</button>
+    <button (click)="stopTimer()">Stop</button>
+    <button (click)="resetTimer()">Reset</button>
+  </div>
+</div>

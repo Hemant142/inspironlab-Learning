@@ -1,0 +1,91 @@
+<div
+  style="
+    display: flex;
+    border: 2px solid blue;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+  "
+>
+  <div
+    style="
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid black;
+      margin-bottom: 2rem;
+      width: 100%;
+      padding: 1rem;
+    "
+  >
+    <h1>Welcome to {{ title }}</h1>
+    <p *ngIf="state">Hi Hemant</p>
+    <button (click)="onToggle()">Toggle</button>
+  </div>
+  <div
+    style="
+      display: flex;
+      flex-direction: column;
+      border: 1px solid black;
+      align-items: center;
+      border: 1px solid black;
+      margin-bottom: 2rem;
+      width: 100%;
+      padding: 1rem;
+    "
+  >
+    <app-hello name="Hemant" (greeted)="onGreeting($event)"></app-hello>
+  </div>
+
+
+    <div
+    style="
+      display: flex;
+      flex-direction: column;
+      border: 1px solid black;
+      align-items: center;
+      border: 1px solid black;
+      margin-bottom: 2rem;
+      width: 100%;
+      padding: 1rem;
+    "
+  >
+<app-counter></app-counter>
+
+</div>
+
+<div
+    style="
+      display: flex;
+      flex-direction: column;
+      border: 1px solid black;
+      align-items: center;
+      border: 1px solid black;
+      margin-bottom: 2rem;
+      width: 100%;
+      padding: 1rem;
+    "
+  >
+<app-timer></app-timer></div>
+
+
+<div
+    style="
+      display: flex;
+      flex-direction: column;
+      border: 1px solid black;
+      align-items: center;
+      border: 1px solid black;
+      margin-bottom: 2rem;
+      width: 100%;
+      padding: 1rem;
+    "
+  >
+
+  
+<app-todo></app-todo>
+</div>
+
+
+</div>

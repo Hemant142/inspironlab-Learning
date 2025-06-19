@@ -1,0 +1,54 @@
+<div style="text-align: center; align-items: center;">
+<h1>Welcome to Angular V17</h1>
+@if(isLoggedIn){
+    <div>Logged In Successfully</div>
+} @else {
+    <div>Please LoggedIn</div>
+}
+<div>
+    <button (click)="Login()">Login</button>
+    <button (click)="logout()">Logout</button>
+</div>
+
+
+@if(age<10){
+    <div>You are Child</div>
+}@else if (age>10&&age<40) {
+<div>You are  Young</div>
+}@else{
+<div>You are old</div>
+}
+
+
+<div style="margin-top: 20px;">
+    @switch (name) {
+@case (('Ram')) {
+    <h4>Hello Ram</h4>
+}
+@case (('Sohan')) {
+    <h4>Hello Sohan</h4>
+}
+@case (('Pooja')) {
+    <h4>Hello Pooja</h4>
+}
+@case (('Rishi')) {
+    <h4>Hello Rishi</h4>
+}
+@default {
+    <h4>No Such name exists</h4>
+}
+    }
+
+</div>
+
+<div style="border: 2px solid black; margin-top: 20px;  padding: 2rem;">
+    <h1>Studen data displayed by for</h1>
+    @for (student of students; track student.id) {
+        <ul>
+            <li>{{student.name}}</li>
+        </ul>
+    } @empty {
+        <h1>No Data found</h1>
+    }
+</div>
+</div>

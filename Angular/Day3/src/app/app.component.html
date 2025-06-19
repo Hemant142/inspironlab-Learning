@@ -1,0 +1,31 @@
+<div>
+  <h1>Welcome to My Angular App</h1>
+  <p>This is a simple Angular application.</p>
+
+  <div>
+    <app-host-listener></app-host-listener>
+  </div>
+  <div>
+    <app-metadata></app-metadata>
+  </div>
+
+  <div>
+    <app-view-provider></app-view-provider>
+  </div>
+  <div style="border: 2px solid black; margin-top: 2rem; margin-bottom: 2rem">
+    <app-encapsulation></app-encapsulation>
+  </div>
+
+  <div
+    style="
+      border: 2px solid blue;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    "
+  >
+    <h1>Parent Component</h1>
+    Parent Component: <input type="text" #parentInput  (keyup)="0"/>
+    <app-parent-to-child-communication-with-metadata [Pdata]="parentInput.value"></app-parent-to-child-communication-with-metadata>
+  </div>
+</div>
